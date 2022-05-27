@@ -36,7 +36,7 @@ function App() {
     },
     {
       id: 8,
-      title: "saree",
+      title: "leopards",
       imageUrl:
         "https://freepngimg.com/thumb/leopard/5-2-leopard-download-png.png",
     },
