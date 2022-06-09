@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState } from "react";
 
 import {
   signInWithGooglePopup,
@@ -22,12 +22,10 @@ const SignInForm = () => {
 
   const { email, password } = formFields;
 
-  const { setCurrentUser } = useContext(UserContext);
+  // const { setCurrentUser } = useContext(UserContext);
 
   const signInWithGoogle = async () => {
-    console.log("Hello Ali");
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const handleChange = (event) => {
@@ -49,7 +47,7 @@ const SignInForm = () => {
         password
       );
 
-      setCurrentUser(user);
+      // setCurrentUser(user);
       // console.log(response);
     } catch (error) {
       switch (error.code) {
@@ -67,7 +65,7 @@ const SignInForm = () => {
 
   return (
     <div className="sign-up-container">
-      <h2>already have an account?</h2>
+      <h2>Already have an account?</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput

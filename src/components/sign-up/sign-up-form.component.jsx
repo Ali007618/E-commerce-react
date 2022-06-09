@@ -1,7 +1,6 @@
-import { async } from "@firebase/util";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React from "react";
-import { useState, useContext } from "react";
+import { useState } from "react";
 
 import {
   createAuthUserWithEmailAndPassword,
@@ -27,7 +26,7 @@ const SignUpForm = () => {
 
   const { email, displayName, password, confirmPassword } = formFields;
 
-  const { setCurrentUser } = useContext(UserContext);
+  // const { setCurrentUser } = useContext(UserContext);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -53,7 +52,7 @@ const SignUpForm = () => {
         password
       );
 
-      setCurrentUser(user);
+      // setCurrentUser(user);
 
       await createUserDocumentFromAuth(user, { displayName });
 
