@@ -8,7 +8,6 @@ import ProducCard from "../../components/product-card/product-card.component";
 
 const Shop = () => {
   const { products } = useContext(ProductContext);
-  console.log("Products", products);
   return (
     <div className="products-container">
       {products.map((product) => (
